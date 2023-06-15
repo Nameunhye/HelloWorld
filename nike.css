@@ -1,0 +1,64 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  background-color: green;
+  width: 100%;
+  height: 100%;
+}
+
+.child {
+  background-color: beige;
+  width: 1700px;
+}
+
+header {
+  margin-top: 20px;
+}
+
+.logo > span {
+  display: inline-block;
+  padding: 0 10px;
+}
+/* div는 블록이니 하나씩 클래스명을 주지말고, 차라리 span으로 각 값을 주자.*/
+/* padding 값은 inline에는 적용이 되지 않으므로, inline-block으로 변경 */
+/* 같은 종류끼리 크게 묶어주는 게 좋다. */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 40px;
+}
+
+.nav-menu ul li {
+  position: relative;
+}
+
+.nav-menu ul li::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: -21px;
+  width: 1px;
+  height: 17px;
+  background-color: #000;
+}
+.nav-menu ul li:last-child::after {
+  width: 0;
+}
