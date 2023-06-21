@@ -3,62 +3,236 @@ html {
   width: 100%;
   height: 100%;
 }
+
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "SUIT-Regular";
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
 }
 
 .parent {
-  display: flex;
-  justify-content: center;
-  background-color: green;
+  /* display: flex;
+  justify-content: center; */
+  background-color: #f5f5f5;
   width: 100%;
   height: 100%;
 }
 
 .child {
-  background-color: beige;
-  width: 1700px;
+  background-color: #f5f5f5;
+  max-width: 1700px;
+  margin: 0 48px;
 }
 
-header {
-  margin-top: 20px;
-}
-
-.logo > span {
-  display: inline-block;
-  padding: 0 10px;
-}
 /* div는 블록이니 하나씩 클래스명을 주지말고, 차라리 span으로 각 값을 주자.*/
 /* padding 값은 inline에는 적용이 되지 않으므로, inline-block으로 변경 */
 /* 같은 종류끼리 크게 묶어주는 게 좋다. */
 
-nav {
+.first {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  background-color: #f5f5f5;
 }
 
-.nav-menu ul {
+.logo {
+  height: 100%;
+  display: flex;
+}
+/* .logo > span {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+} */
+.logo1-1 {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px 0 0;
+}
+.logo1-2 {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+}
+
+.nav-menu1 ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.nav-menu1 ul li {
+  position: relative;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nav-menu1 ul li::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -15px;
+  width: 1px;
+  height: 14px;
+  background-color: #000;
+}
+.nav-menu1 ul li:last-child::after {
+  width: 0;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+.logo2 {
+  height: 100%;
+  display: flex;
+}
+/* .logo > span {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+} */
+.logo2-1 {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px 0 0;
+  position: absolute;
+  left: 0;
+}
+.logo2-1 svg {
+  width: 78.47px;
+  height: 78.47px;
+}
+
+.nav-menu2 ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
   gap: 40px;
 }
 
-.nav-menu ul li {
+.nav-menu2 ul li {
   position: relative;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.nav-menu ul li::after {
-  content: "";
+.search {
+  display: flex;
+
   position: absolute;
-  top: 4px;
-  right: -21px;
-  width: 1px;
-  height: 17px;
-  background-color: #000;
+  right: 0;
+  height: 64px;
 }
-.nav-menu ul li:last-child::after {
-  width: 0;
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 180px;
+  background-color: #f5f5f5;
+  padding: 8px 48px;
+  border-style: none;
+  border-radius: 100px;
+}
+
+.search-bar::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: bolder;
+  color: #d5d5d5;
+}
+
+.button {
+  position: absolute;
+  left: 0px;
+  top: 13px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  background: #f5f5f5;
+  padding: 6px 8px;
+}
+
+.logo3 {
+  height: 100%;
+  display: flex;
+}
+/* .logo > span {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+} */
+.logo3-1 {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0px 25px 0 35px;
+}
+.logo3-2 {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+.empty {
+  height: 58px;
+  background-color: #f5f5f5;
+  border-bottom-style: solid;
+  border-color: #e5e5e5;
+  border-bottom-width: 1px;
+}
+.grandChild {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.mainTitle {
+  font-size: 50px;
+  font-weight: 900;
+  padding-top: 30px;
+}
+.subTitle {
+  font-size: 16px;
+  padding: 20px 0 30px;
+}
+.button2 button {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-style: hidden;
+  border-radius: 30px;
 }
